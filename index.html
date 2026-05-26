@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chiara Sala Baglioni | Consulenza Immobiliare Strategica Brescia</title>
+    <style>
+        /* Reset e Box Sizing universale per un rendering perfetto */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --primary-navy: #0f1c2c;      /* Blu notte ispirato ai circoli velici esclusivi */
+            --accent-gold: #b39258;       /* Oro caldo e raffinato per dettagli e bottoni */
+            --light-cream: #faf7f2;       /* Sfondo chiaro, riposante ed elegante */
+            --text-dark: #2b2b2b;         /* Testo principale scuro ad alta leggibilità */
+            --text-muted: #5a6573;        /* Testo secondario desaturato */
+            --border-color: #e3ded6;      /* Bordi sottili e discreti */
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background-color: var(--light-cream);
+            color: var(--text-dark);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .sans-serif-text {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 25px;
+        }
+
+        /* Top Bar / Brand Header */
+        .brand-header {
+            background-color: var(--primary-navy);
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(179, 146, 88, 0.3);
+            text-align: center;
+        }
+
+        .brand-logo {
+            color: var(--accent-gold);
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 300;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: var(--primary-navy);
+            color: #ffffff;
+            padding: 90px 0;
+            text-align: center;
+            border-bottom: 4px solid var(--accent-gold);
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 400;
+            line-height: 1.3;
+            max-width: 850px;
+            margin: 0 auto 25px auto;
+            color: #ffffff;
+        }
+
+        .hero p {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+            color: #ced5de;
+            font-weight: 300;
+        }
+
+        /* Pulsanti d'azione principali ed eleganti */
+        .btn-primary {
+            display: inline-block;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--accent-gold);
+            color: var(--primary-navy);
+            padding: 18px 45px;
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+            border: 2px solid var(--accent-gold);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--accent-gold);
+        }
+
+        /* Sezione Valori e Filosofia */
+        .philosophy-section {
+            padding: 80px 0;
+            background-color: #ffffff;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section-tag {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--accent-gold);
+            margin-bottom: 15px;
+            display: block;
+            font-weight: 600;
+        }
+
+        .philosophy-section h2 {
+            font-size: 2.2rem;
+            color: var(--primary-navy);
+            margin-bottom: 25px;
+            font-weight: 400;
+        }
+
+        .philosophy-section p {
+            font-size: 1.15rem;
+            max-width: 750px;
+            margin: 0 auto;
+            color: var(--text-muted);
+        }
+
+        /* Griglia dei Vantaggi (Layout robusto senza flex/grid complessi a livello body, usando blocchi inline controllati) */
+        .vantaggi-section {
+            padding: 90px 0;
+            background-color: var(--light-cream);
+        }
+
+        .vantaggi-section h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--primary-navy);
+            margin-bottom: 60px;
+            font-weight: 400;
+        }
+
+        .columns-container {
+            text-align: center;
+            font-size: 0; /* Rimuove lo spazio bianco tra inline-block */
+        }
+
+        .column-card {
+            display: inline-block;
+            vertical-align: top;
+            width: 31%;
+            margin: 0 1.1%;
+            background-color: #ffffff;
+            padding: 40px 30px;
+            border-top: 3px solid var(--accent-gold);
+            text-align: left;
+            font-size: 1rem; /* Ripristina la dimensione del font */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        }
+
+        .column-card h3 {
+            font-size: 1.4rem;
+            color: var(--primary-navy);
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .column-card p {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Sezione Lead Magnet */
+        .lead-magnet-box {
+            background-color: var(--primary-navy);
+            color: #ffffff;
+            padding: 65px 50px;
+            margin: 60px 0 0 0;
+            text-align: center;
+            border-left: 5px solid var(--accent-gold);
+        }
+
+        .lead-magnet-box h3 {
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+
+        .lead-magnet-box p {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 1.1rem;
+            color: #ced5de;
+            max-width: 650px;
+            margin: 0 auto 35px auto;
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: transparent;
+            color: var(--accent-gold);
+            padding: 15px 35px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-decoration: none;
+            border: 2px solid var(--accent-gold);
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--accent-gold);
+            color: var(--primary-navy);
+        }
+
+        /* Sezione Contatti */
+        .contacts-section {
+            padding: 90px 0;
+            background-color: #ffffff;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .contacts-section h2 {
+            font-size: 2.2rem;
+            color: var(--primary-navy);
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .contacts-section .subtitle {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+        }
+
+        .contact-info {
+            font-size: 1.6rem;
+            color: var(--primary-navy);
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+
+        .contact-name {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-gold);
+            margin-bottom: 50px;
+            font-weight: 600;
+        }
+
+        .external-link-container {
+            margin-top: 30px;
+        }
+
+        .external-link {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+
+        .external-link:hover {
+            color: var(--accent-gold);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--primary-navy);
+            color: #7f8c8d;
+            padding: 35px 0;
+            text-align: center;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* Responsive Query per Dispositivi Mobili */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .column-card {
+                display: block;
+                width: 100%;
+                margin: 0 0 30px 0;
+            }
+            .philosophy-section h2, .vantaggi-section h2, .contacts-section h2 {
+                font-size: 1.7rem;
+            }
+            .lead-magnet-box {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Brand Header -->
+    <header class="brand-header">
+        <div class="container">
+            <div class="brand-logo">Chiara Sala Baglioni</div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Valorizziamo il potenziale della tua casa nel mercato di Brescia.</h1>
+            <p>Valorizziamo la tua proprietà con un approccio strategico sartoriale, coniugando rigore tecnico ed estetica d'eccellenza per intercettare l'acquirente ideale.</p>
+            <a href="#contatti" class="btn-primary">Prenota un colloquio riservato</a>
+        </div>
+    </section>
+
+    <!-- Valori e Filosofia -->
+    <section class="philosophy-section">
+        <div class="container">
+            <span class="section-tag">Un servizio per obiettivi d'élite</span>
+            <h2>Allineati al tuo stile di vita, devoti ai tuoi valori.</h2>
+            <p>Comprendiamo a fondo le priorità di chi investe tempo e passioni nei circoli più esclusivi del tennis, del golf e della vela a Brescia. Per noi la gestione patrimoniale è una sintesi perfetta tra dedizione al lavoro, tutela della famiglia, rispetto per la natura e cura della salute.</p>
+        </div>
+    </section>
+
+    <!-- Sezione Vantaggi Strategici -->
+    <section class="vantaggi-section">
+        <div class="container">
+            <h2>Il metodo strutturato per vendere al miglior prezzo</h2>
+            
+            <div class="columns-container">
+                <!-- Vantaggio 1 -->
+                <div class="column-card">
+                    <h3>Conformità Tecnica Preventiva</h3>
+                    <p>Azzeriamo ogni margine di rischio analizzando preventivamente la documentazione urbanistica e catastale. Una tutela assoluta per il tuo lavoro e per la serenità della tua famiglia prima di arrivare al rogito.</p>
+                </div>
+                
+                <!-- Vantaggio 2 -->
+                <div class="column-card">
+                    <h3>Home Staging Sartoriale</h3>
+                    <p>La tua casa non viene semplicemente messa in vendita, ma posizionata sul mercato. Trasformiamo gli spazi esaltandone la bellezza naturale e l'armonia, rendendo l'immobile un asset desiderabile e competitivo fin dal primo sguardo.</p>
+                </div>
+                
+                <!-- Vantaggio 3 -->
+                <div class="column-card">
+                    <h3>Marketing Targettizzato</h3>
+                    <p>Nessuna perdita di tempo con visite inconcludenti. Sviluppiamo strategie di promozione mirate per raggiungere unicamente profili selezionati, altospendenti e pronti all'acquisto.</p>
+                </div>
+            </div>
+
+            <!-- Lead Magnet Integrato -->
+            <div class="lead-magnet-box">
+                <h3>L'Executive Report per il proprietario consapevole</h3>
+                <p>Scarica il documento strategico: "Salute del patrimonio e valorizzazione immobiliare d'eccellenza a Brescia e provincia". Un'analisi dettagliata per proteggere il valore del tuo bene.</p>
+                <a href="#" class="btn-secondary">Ricevi il report privato</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Sezione Contatti e Chiusura -->
+    <section id="contatti" class="contacts-section">
+        <div class="container">
+            <span class="section-tag">Consulenza Diretta</span>
+            <h2>Fissa un incontro in totale riservatezza</h2>
+            <p class="subtitle">Scegli la certezza di un posizionamento di mercato senza compromessi.</p>
+            
+            <div class="contact-info">Telefono: 351 6467170</div>
+            <div class="contact-name">Chiara Sala Baglioni</div>
+            
+            <a href="https://chiarasalabaglioni.it/#about" class="btn-primary">Richiedi valutazione strategica</a>
+            
+            <div class="external-link-container">
+                <a href="#" class="external-link">Torna alla home page istituzionale</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Chiara Sala Baglioni. Tutti i diritti riservati. Consulenza Immobiliare e Home Staging d'Elite a Brescia e Provincia.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
